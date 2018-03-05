@@ -21,7 +21,7 @@ At the beginning of each cohort, update from [ember-template](https://git.genera
 1. Unzip and rename the template directory (`unzip ~/Downloads/ember-auth-template-master.zip`).
 1. Move into the new project and `git init`.
 1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.ember-auth` with your app name. This
+1. Replace all instances of `ember-project-manager` with your app name. This
     includes:
       - [`app/adapters/application.js`](app/adapters/application.js)
       - [`app/index.html`](app/index.html)

@@ -1,6 +1,6 @@
 import Application from '@ember/application';
 import { run } from '@ember/runloop';
-import TextFieldInitializer from 'ga-wdi-boston.ember-auth/initializers/text-field';
+import TextFieldInitializer from 'ember-project-manager/initializers/text-field';
 import { module, test } from 'qunit';
 
 let application;

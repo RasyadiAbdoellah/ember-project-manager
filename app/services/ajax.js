@@ -2,7 +2,7 @@ import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
 import AjaxService from 'ember-ajax/services/ajax';
 
-import ENV from 'ga-wdi-boston.ember-auth/config/environment';
+import ENV from 'ember-project-manager/config/environment';
 
 export default AjaxService.extend({
   host: ENV.apiHost,
