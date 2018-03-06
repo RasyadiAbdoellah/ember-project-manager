@@ -1,0 +1,8 @@
+  <h3>{{project.name}}</h3>
+  {{log project.dueDate}}
+  <h4>Due: {{project.dueDate}}</h4>
+  {{#if project.startDate}}
+  <h4>Start: {{project.startDate}}</h4>
+  <h5>Project Length: {{project.projectLength}}</h5>
+  {{/if}}
+  <p>{{project.description}}</p>

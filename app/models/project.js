@@ -3,7 +3,8 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   name: DS.attr('string'),
   description: DS.attr('string'),
-  due_date: DS.attr('date'),
-  start_date: DS.attr('date'),
-  user_id: DS.attr('number')
+  dueDate: DS.attr('date'),
+  startDate: DS.attr('date'),
+  projectLength:DS.attr('number'),
+  user: DS.belongsTo('user')
 });
