@@ -2,3 +2,6 @@
 {{#each model as |project|}}
   {{project-panel project=project}}
 {{/each}}
+{{#link-to 'projects.new' }}<button>New Project</button>{{/link-to}}
+
+{{outlet}}
