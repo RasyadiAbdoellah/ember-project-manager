@@ -1,7 +1,8 @@
 <h1>Your Projects</h1>
 {{#each model as |project|}}
-  {{project-panel project=project}}
+  <div class="row">{{project-panel project=project}}</div>
 {{/each}}
-{{#link-to 'projects.new' }}<button>New Project</button>{{/link-to}}
-
+<div class="row">
+{{#link-to 'projects.new'}}<button>New Project</button>{{/link-to}}
 {{outlet}}
+</div>

@@ -9,23 +9,93 @@ export default DS.Model.extend({
   projectLength:DS.attr('number'),
   user: DS.belongsTo('user'),
 
-  formattedDueDate: computed('dueDate', function () {
-    return this.get('dueDate').toLocaleDateString()
+  displayDueDate: computed('dueDate', function () {
+    if(this.get('dueDate')){
+      return this.get('dueDate').toLocaleDateString()
+    }
   }),
-  formattedDueTime: computed('dueDate', function () {
-    return this.get('dueDate').toLocaleTimeString()
+  displayDueTime: computed('dueDate', function () {
+    if(this.get('dueDate')){
+      return this.get('dueDate').toLocaleTimeString()
+    }
+  }),
+  
+  displayStartDate: computed('startDate', function () {
+    if(this.get('startDate')){
+      return this.get('startDate').toLocaleDateString()
+    }
+  }),
+  displayStartTime: computed('startDate', function () {
+    if(this.get('startDate')){
+      return this.get('startDate').toLocaleTimeString()
+    }
+  }),
+  displayProjectLength: computed('projectLength', function () {
+    // returns formatted project length
+    if(this.get('projectLength')){
+      return `${this.get('projectLength')/(3600 * 24)} days`
+    }
   }),
 
-  formattedStartDate: computed('startDate', function () {
-    return this.get('startDate').toLocaleDateString()
+  inputDueDate: computed('dueDate', {
+    get(key) {
+      let date
+      if(this.get('dueDate')){
+        date = this.get('dueDate')
+      } else {
+        date = new Date()
+      }
+      console.log('date string is:', date.toLocaleDateString())
+      return date.toLocaleDateString().split('/').reverse().join('-')
+    },
+    set(key, value) {
+      let date
+      const parsedVal = value.split('-')
+      console.log(parsedVal)
+      if(this.get('dueDate')) {
+        date = this.get('dueDate')
+        console.log('inside date if',date)
+
+        date.setDate(parseInt(parsedVal[2]))
+        date.setMonth(parseInt(parsedVal[1]))
+        date.setYear(parseInt(parsedVal[0]))
+      } else {
+        date = new Date()
+        console.log('inside else',date)
+      }
+      console.log('end of set func',date)
+      console.log(this.get('dueDate'))
+      this.set('dueDate', date)
+      return date
+    }
   }),
-  formattedStartTime: computed('startDate', function () {
-    return this.get('startDate').toLocaleTimeString()
+  inputDueTime: computed('dueDate', {
+    get(key) {
+      let date
+      if(this.get('dueDate')){
+        date = this.get('dueDate')
+      } else {
+        date = new Date()
+      }
+      return date.toLocaleTimeString()
+    },
+    set(key, value) {
+      let date
+      const parsedVal = value.split(':')
+      console.log(parsedVal)
+      if(this.get('dueDate')) {
+        date = this.get('dueDate')
+        console.log('inside time if', date)
+      } else {
+        date = new Date()
+        console.log('inside time else', date)
+      }
+      date.setHours(parseInt(parsedVal[0]),parseInt(parsedVal[1]))
+      console.log('date hours set', date)
+      this.set('dueDate', date)
+      return date
+    }
   }),
-  formattedProjectLength: computed('projectLength', function () {
-    // returns formatted project length
-    return `${this.get('projectLength')/(3600 * 24)} days`
-  })
 
 
 });

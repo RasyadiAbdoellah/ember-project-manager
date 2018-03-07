@@ -1,8 +1,8 @@
   <h3>{{project.name}}</h3>
-  <h4>Due: {{project.formattedDueDate}} at {{project.formattedDueTime}}</h4>
+  <h4>Due: {{project.displayDueDate}} at {{project.displayDueTime}}</h4>
   {{#if project.startDate}}
-  <h4>Start: {{project.formattedStartDate}} at {{project.formattedStartTime}}</h4>
-  <h4>Project Length: {{project.formattedProjectLength}}</h4>
+  <h4>Start: {{project.displayStartDate}} at {{project.displayStartTime}}</h4>
+  <h4>Project Length: {{project.displayProjectLength}}</h4>
   {{/if}}
   <p>{{project.description}}</p>
   <button>Delete item</button>

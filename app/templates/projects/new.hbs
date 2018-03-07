@@ -1,3 +1,7 @@
+{{log model.dueDate}}
+
 {{input value=model.name type='text' placeholder='Project Name'}}
-{{input value=model.DateDue type='date'}}
-{{input value=model.timeDue type='time'}}
+{{input value=model.inputDueDate type='date'}}
+{{!-- {{input value=model.inputDueTime type='time'}} --}}
+{{!-- {{input value=model.description type='text-area'}} --}}
+<button {{action 'save' project}}>Save Project</button>
