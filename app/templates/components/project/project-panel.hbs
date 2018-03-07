@@ -1,4 +1,4 @@
-  <h3>{{project.name}}</h3>
+  {{#link-to 'project' project}}<h3>{{project.name}}</h3>{{/link-to}}
   <h4>Due: {{project.displayDueDate}}</h4>
   {{#if project.startDate}}
     <h4> Estimate project length (days): {{project.inputProjectLength}}</h4>

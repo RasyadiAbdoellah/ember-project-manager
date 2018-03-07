@@ -13,6 +13,7 @@ Router.map(function () {
   this.route('users');
   this.route('projects', function() {});
   this.route('new-project',{path:'projects/new'});
+  this.route('project', {path:'projects/:project_id'});
 });
 
 export default Router;
