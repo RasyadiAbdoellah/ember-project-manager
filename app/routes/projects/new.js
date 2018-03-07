@@ -5,8 +5,9 @@ export default Route.extend({
     return this.get('store').createRecord('project',{})
   },
   actions: {
-    save (project) {
-    console.log('save clicked. project is', project)
+    save (model) {
+    console.log('save clicked', model)
+    model.save()
   }
 }
 });
