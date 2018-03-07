@@ -41,10 +41,14 @@ export default DS.Model.extend({
     }
   }),
 
-  displayProjectLength: computed('projectLength', function () {
+  displayProjectLength: computed('dueDate', 'startDate', function () {
     // returns formatted project length in days
-    if(this.get('projectLength')){
-      return `${this.get('projectLength')/(3600 * 24)} days`
+    const dueDate = this.get('dueDate')
+    const startDate = this.get('startDate')
+    const oneDay = 1000 * 60 * 60 * 24 //converts milliseconds to time in days
+    if(startDate){
+      const diffInDays = dueDate - startDate / oneDay
+      return `${diffInDays} days`
     }
   }),
 
