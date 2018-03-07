@@ -5,9 +5,10 @@ export default Route.extend({
     return this.get('store').createRecord('project',{})
   },
   actions: {
-    save (model) {
-    console.log('save clicked', model)
-    model.save()
+    saveProject (project) {
+    console.log('saving project', project)
+    return project.save()
+      .then(() =>{this.transitionTo('projects')})
   }
 }
 });

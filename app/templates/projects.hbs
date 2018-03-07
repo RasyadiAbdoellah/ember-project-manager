@@ -1,8 +1,5 @@
 <h1>Your Projects</h1>
+{{#link-to 'new-project'}}<button>New Project</button>{{/link-to}}
 {{#each model as |project|}}
-  <div class="row">{{project-panel project=project deleteProject='deleteProject'}}</div>
+  <div class="row">{{project/project-panel project=project deleteProject='deleteProject'}}</div>
 {{/each}}
-<div class="row">
-{{#link-to 'projects.new'}}<button>New Project</button>{{/link-to}}
-{{outlet}}
-</div>
