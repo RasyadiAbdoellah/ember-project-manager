@@ -6,7 +6,6 @@ export default Route.extend({
   },
   actions: {
     saveProject (project) {
-    console.log('saving project', project)
     return project.save()
       .then(() =>{this.transitionTo('projects')})
   }

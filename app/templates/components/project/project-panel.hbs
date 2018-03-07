@@ -1,4 +1,8 @@
   <h3>{{project.name}}</h3>
   <h4>Due: {{project.displayDueDate}}</h4>
+  {{#if project.startDate}}
+    <h4> Estimate project length (days): {{project.inputProjectLength}}</h4>
+    <h4> Suggested start date: {{project.displayStartDate}}</h4>
+  {{/if}}
   <p>{{project.description}}</p>
   <button {{action 'delete' project}} >Delete item</button>

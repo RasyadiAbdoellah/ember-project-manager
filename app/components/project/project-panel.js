@@ -1,10 +1,12 @@
 import Component from '@ember/component';
+import { computed } from '@ember/object';
 
 export default Component.extend({
   actions: {
     delete (project) {
-      console.log('delete button clicked, sending action up')
       this.sendAction('deleteProject', project)
     }
   }
+}).reopenClass({
+  positionalParams: 'params'
 });
