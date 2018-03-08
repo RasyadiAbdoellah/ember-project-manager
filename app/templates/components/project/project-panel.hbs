@@ -1,9 +1,8 @@
-<div class="panel-body">
-  <div class="col-xs-12 vertical-align">
-    <div class="">{{#link-to 'project' project}}<h3>{{project.name}}</h3>{{/link-to}}<button {{action 'delete' project}} class="btn btn-danger">Delete</button></div>
+  <div class="proj-panel-head">
+    {{#link-to 'project' project}}<h2>{{project.name}}</h2>{{/link-to}}
+    <button {{action 'delete' project}} class="btn btn-danger btn-xs">{{fa-icon 'trash-o' size 2}} Delete </button>
   </div>
   <h5 class="text-danger"><strong>Due: {{project.displayDueDate}}</strong></h5>
   {{#if project.startDate}}
     <h5 class="text-warning"> <strong>Time to due: {{project.displayTimeTillDue}}</strong></h5>
   {{/if}}
-</div>

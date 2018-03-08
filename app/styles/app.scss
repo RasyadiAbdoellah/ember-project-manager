@@ -4,12 +4,27 @@
   margin-bottom: 1.25rem;
 }
 
-.vertical-align {
+h1, h2 {
+  font: {
+    weight: bold;
+  }
+}
+
+.proj-panel-head {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
+  a {
+    display: inline-block;
+    padding-right:10px;
+    h2 {
+      margin: 0;
+    }
+  }
 }
 
 .project-view-date-info {
-  height: 2rem;
+  padding: 5px 0;
   font-weight: bold;
 }
+
