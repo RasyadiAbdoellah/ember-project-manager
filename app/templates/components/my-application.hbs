@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    {{!-- {{navbar-header}} --}}
+      {{navbar-header}}
 
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
@@ -26,10 +26,5 @@
 {{/each}}
 
 <div class="col-md-10">
-{{#if isAuthenticated}}
-  {{outlet}}
-{{else}}
-<h1>Welcome to MyProjectManager</h1>
-<p>This is a project manager designed to give you a start date based on how long the project will be,and tells you important date information. {{#link-to "sign-in"}}Sign in{{/link-to}} or {{#link-to "sign-up"}}sign up{{/link-to}} and start adding your projects!</p>
-{{/if}}
+{{outlet}}
 </div>

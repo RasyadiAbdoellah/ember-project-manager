@@ -2,7 +2,7 @@
     {{#link-to 'project' project}}<h2>{{project.name}}</h2>{{/link-to}}
     <button {{action 'delete' project}} class="btn btn-danger btn-xs">{{fa-icon 'trash-o' size 2}} Delete </button>
   </div>
-  <h5 class="text-danger"><strong>Due: {{project.displayDueDate}}</strong></h5>
+  <h4 class="text-danger"><strong>Due: {{project.displayDueDate}}</strong></h4>
   {{#if project.startDate}}
-    <h5 class="text-warning"> <strong>Time to due: {{project.displayTimeTillDue}}</strong></h5>
+    <h4 class="text-warning"> <strong>Time to due: {{project.displayTimeTillDue}}</strong></h4>
   {{/if}}
