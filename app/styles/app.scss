@@ -1,1 +1,15 @@
 @import "ember-bootstrap/bootstrap";
+
+.form-control, .bottom-margin {
+  margin-bottom: 1.25rem;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+.project-view-date-info {
+  height: 2rem;
+  font-weight: bold;
+}

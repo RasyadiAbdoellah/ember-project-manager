@@ -1,8 +1,9 @@
-  {{#link-to 'project' project}}<h3>{{project.name}}</h3>{{/link-to}}
-  <h4>Due: {{project.displayDueDate}}</h4>
+<div class="panel-body">
+  <div class="col-xs-12 vertical-align">
+    <div class="">{{#link-to 'project' project}}<h3>{{project.name}}</h3>{{/link-to}}<button {{action 'delete' project}} class="btn btn-danger">Delete</button></div>
+  </div>
+  <h5 class="text-danger"><strong>Due: {{project.displayDueDate}}</strong></h5>
   {{#if project.startDate}}
-    <h4> Estimate project length (days): {{project.inputProjectLength}}</h4>
-    <h4> Suggested start date: {{project.displayStartDate}}</h4>
+    <h5 class="text-warning"> <strong>Time to due: {{project.displayTimeTillDue}}</strong></h5>
   {{/if}}
-  <p>{{project.description}}</p>
-  <button {{action 'delete' project}} >Delete item</button>
+</div>

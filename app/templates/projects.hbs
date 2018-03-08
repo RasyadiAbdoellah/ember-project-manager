@@ -1,5 +1,8 @@
-<h1>Your Projects</h1>
-{{#link-to 'new-project'}}<button>New Project</button>{{/link-to}}
+<div class="row bottom-margin">
+  <div class="col-xs-12"><h1>Your Projects</h1>
+  {{#link-to 'new-project'}}<button class="btn btn-default">New Project</button>{{/link-to}}
+  </div>
+</div>
 {{#each model as |project|}}
-  <div class="row">{{project/project-panel project=project deleteProject='deleteProject'}}</div>
+  {{project/project-panel class="panel panel-default" project=project deleteProject='deleteProject'}}
 {{/each}}
