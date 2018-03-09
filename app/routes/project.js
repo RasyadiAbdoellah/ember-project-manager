@@ -8,8 +8,12 @@ export default Route.extend({
 
   actions: {
     saveProject (project) {
-      console.log('saveProject')
+      // console.log('saveProject')
       return project.save()
+    },
+    cancelUpdate (project) {
+      console.log('route cancel')
+      project.rollbackAttributes()
     }
   }
 });

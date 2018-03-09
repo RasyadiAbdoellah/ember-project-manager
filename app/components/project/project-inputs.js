@@ -26,8 +26,12 @@ export default Component.extend({
   // }),
   actions:{
     save (project) {
-      console.log('save clicked')
+      // console.log('save clicked')
       this.sendAction('save', project)
+    },
+    cancel(project) {
+      console.log('component cancel')
+      this.sendAction('cancel', project)
     }
   }
 });
