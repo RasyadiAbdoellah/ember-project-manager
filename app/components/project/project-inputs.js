@@ -11,9 +11,9 @@ export default Component.extend({
     } else {
       theDate = new Date()
     }
-    const date = '0' + theDate.getUTCDate() 
-    const month = '0' + (theDate.getUTCMonth() + 1)
-    const year = theDate.getUTCFullYear()
+    const date = '0' + theDate.getDate() 
+    const month = '0' + (theDate.getMonth() + 1)
+    const year = theDate.getFullYear()
     return `${year}-${month}-${date}`
   }),
   

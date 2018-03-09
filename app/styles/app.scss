@@ -43,11 +43,47 @@ h1, h2 {
   }
 }
 
-.project-view-date-info {
-  padding: 5px;
-  font-weight: bold;
-  margin: 0;
+.project-view {
+  margin-bottom: 15px;
+
+  &-date-info {
+    padding: 5px;
+    font-weight: bold;
+    margin: 0;
+  }
+  &-info-heading {
+    font: {
+      weight: bold;
+      size: 2rem;
+    }
+  }
+  &-info{
+    white-space: pre-wrap;
+    font-size: 2rem;
+  }
 }
+
+.landing-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  vertical-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  .landing-page {
+    width: 50vw;
+  }
+  .heading {
+    width: 100%;
+  }
+  .content{
+    line-height: 2.5rem;
+    width:100%;
+  }
+}
+
+
 
 
 

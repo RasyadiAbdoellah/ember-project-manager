@@ -4,11 +4,11 @@
 <label for="project-due">Project due date</label>
 {{input value=project.inputDueDate type='date' min=dateValidator required="true" id='project-due'}}
 <label for="project-length">Estimated project length (in days)</label>
-{{input value=project.inputProjectLength type='number' min=1 required="true" id='project-length'}}
+{{input value=project.inputProjectLength type='number' min=0 required="true" id='project-length'}}
 
 {{!-- {{input value=project.inputStartDate type='date' min=startDateValidator required="true" id='project-start'}} --}}
 {{!-- {{input value=project.inputDueTime type='time'}} --}}
-<label for="project-descrip">Project description</label>
+<label for="project-descrip">Additional info</label>
 {{textarea value=project.description id="project-descrip" class="form-control" rows="4"}}
 <button class="btn btn-secondary" {{action 'cancel'}}>Cancel</button> <button type="submit" class="btn btn-primary">Save Project</button>
 </form>

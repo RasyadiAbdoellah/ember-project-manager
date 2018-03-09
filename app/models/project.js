@@ -10,7 +10,7 @@ export default DS.Model.extend({
   
   displayDueDate: computed('dueDate', function () {
     if(this.get('dueDate')){
-      return this.get('dueDate').toUTCString().substring(0,16)
+      return this.get('dueDate').toString().substring(0,15)
     }
   }),
 
@@ -19,9 +19,9 @@ export default DS.Model.extend({
     const curDate = new Date()
     if(start){
       if (curDate > start) {
-        return `Now! (originally ${start.toUTCString().substring(0,16)})`
+        return `Now! (originally ${start.toString().substring(0,15)})`
       } else {
-        return start.toUTCString().substring(0,16)
+        return start.toString().substring(0,15)
       }
     }
   }),
@@ -30,7 +30,7 @@ export default DS.Model.extend({
     const dueDate = this.get('dueDate')
     const startDate = this.get('startDate')
     const oneDay = 1000 * 60 * 60 * 24 // one day in milliseconds
-    const diffInDays = Math.floor((dueDate - startDate )/ oneDay)
+    const diffInDays = Math.ceil((dueDate - startDate )/ oneDay)
     return `${diffInDays} day(s)`
   }),
 
@@ -40,12 +40,12 @@ export default DS.Model.extend({
     const oneDay = 1000 * 60 * 60 * 24 // one day in milliseconds
     let diff
     if(((dueDate - curDate )/ oneDay) < 1){
-      diff = Math.floor((dueDate - curDate )/ (1000 * 60 * 60))
+      diff = Math.ceil((dueDate - curDate )/ (1000 * 60 * 60))
+      console.log(diff)
       diff = diff <= 0 ? 'Today!' : `${diff} hour(s)`
     } else {
-      diff = `${Math.floor((dueDate - curDate )/ oneDay)} day(s)`
+      diff = `${Math.ceil((dueDate - curDate )/ oneDay)} day(s)`
     }
-    console.log(diff)
     return diff
   }),
 
@@ -57,16 +57,17 @@ export default DS.Model.extend({
       } else {
         theDate = new Date()
       }
-      date = theDate.getUTCDate() < 10 ? '0' + theDate.getUTCDate() : theDate.getUTCDate()
-      month = '0'+ (theDate.getUTCMonth() + 1)
-      year = theDate.getUTCFullYear()
+      date = theDate.getDate() < 10 ? '0' + theDate.getDate() : theDate.getDate()
+      month = '0'+ (theDate.getMonth() + 1)
+      year = theDate.getFullYear()
       console.log(`${year}-${month}-${date}`)
       return `${year}-${month}-${date}`
     },
     set(key, value) {
-      const date = new Date(value)
-      this.set('dueDate', date)
-      return value
+        const gmtOffset = new Date().getTimezoneOffset() * 1000 * 60 // in milliseconds
+        const date = new Date(Date.parse(value) + gmtOffset)
+        this.set('dueDate', date)
+        return value
     }
   }),
 
@@ -76,14 +77,19 @@ export default DS.Model.extend({
       const dueDate = this.get('dueDate')
       const startDate = this.get('startDate')
       const oneDay = 1000 * 60 * 60 * 24 // one day in milliseconds
-      return Math.floor((dueDate - startDate )/ oneDay)
+      return Math.ceil((dueDate - startDate )/ oneDay)
     },
     set(key, value) {
       const dueDate = this.get('dueDate')
       const oneDay = 1000 * 60 * 60 * 24 // one day in milliseconds
       const projectLength = value * oneDay
-      const newDate = new Date((Date.parse(dueDate) - projectLength))
-          this.set('startDate', newDate)
+      let newDate
+      if( (Date.parse(dueDate) - projectLength) > 0 ) {
+        newDate = new Date((Date.parse(dueDate) - projectLength))
+      } else {
+        newDate = new Date()
+      }
+      this.set('startDate', newDate)
     }
   }),
 

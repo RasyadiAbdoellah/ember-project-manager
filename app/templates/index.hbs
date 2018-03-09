@@ -1,8 +1,13 @@
+<div class="landing-container">
 {{#if isAuthenticated}}
-<h1>Welcome back!</h1>
-<h4>This is a project manager designed to give you a start date based on how long the project will be,and tells you important date information. {{#link-to 'projects'}}View your projects here.{{/link-to}}</h4>
+  <div class="landing-page">
+    <h1 class="heading">Welcome back!</h1>
+    <h4 class="content">MyProjectManager is a project manager designed to give you important date information, based on a project's due date and estimated project length. Using these two variables, MyProjectManager will provide you with a suggested start date, and time to due date. {{#link-to 'projects'}}View your projects here.{{/link-to}}</h4>
+  </div>
 {{else}}
-<h1 {{action 'test'}} >Welcome to MyProjectManager</h1>
-<h4>This is a project manager designed to give you a start date based on how long the project will be,and tells you important date information. {{#link-to "sign-in"}}Sign in{{/link-to}} or {{#link-to "sign-up"}}sign up{{/link-to}} and start adding your projects!</h4>
-
+  <div class="landing-page">
+    <h1 class="heading">Welcome to MyProjectManager</h1>
+    <h4 class="content">MyProjectManager is a project manager designed to give you important date information, based on a project's due date and estimated project length. Using these two variables, MyProjectManager will provide you with a suggested start date, and time to due date. {{#link-to "sign-in"}}Sign in{{/link-to}} or {{#link-to "sign-up"}}sign up{{/link-to}} and start adding your projects!</h4>
+  </div>
 {{/if}}
+</div>
