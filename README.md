@@ -7,8 +7,10 @@ In future iterations, The tasks that make up a project will also have individual
 This is the frontend for MyProjectManager.
 
 Deployed backend: https://agile-plains-89962.herokuapp.com/
+
 Deployed frontend: https://rasyadiabdoellah.github.io/ember-project-manager/
-Backend repo: https://github.com/RasyadiAbdoellah/project-manager-api
+
+Backend repo: https://github.com/RasyadiAbdoellah/project-manager-backend
 
 ## Tech Stack
 - HTML5, CSS3, JavaScript ES6
@@ -47,6 +49,7 @@ Backend repo: https://github.com/RasyadiAbdoellah/project-manager-api
 ### ERD + Wireframes
 
 [Link to ERD](https://www.lucidchart.com/invitations/accept/a00cd495-fe73-4f47-86d6-7921a5ae1631)
+[Wireframes](https://i.imgur.com/4nNuqbL.jpg)
 
 ### Technical issues/improvements
 
