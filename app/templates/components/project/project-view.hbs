@@ -1,0 +1,10 @@
+{{#link-to 'projects'}}back to projects {{/link-to}}
+<div class="project-view-heading"><h1>{{project.name}}</h1><button class="btn btn-default" {{action 'toggleEdit'}}>{{fa-icon "pencil-square-o"}}</button></div>
+<h3 class="bg-danger project-view-date-info">Project due on: {{project.displayDueDate}}</h3>
+<h3 class="bg-warning project-view-date-info">Estimated project length: {{project.displayProjectLength}}</h3>
+<h3 class="bg-warning project-view-date-info">Time to due date: {{project.displayTimeTillDue}}</h3>
+<h3 class="bg-success project-view-date-info">Suggested start date: {{project.displayStartDate}}</h3>
+{{#if project.description}}
+<h4>Additional info</h4>
+<p>{{project.description}}</p>
+{{/if}}

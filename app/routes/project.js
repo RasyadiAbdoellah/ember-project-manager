@@ -8,6 +8,7 @@ export default Route.extend({
 
   actions: {
     saveProject (project) {
+      console.log('saveProject')
       return project.save()
     }
   }

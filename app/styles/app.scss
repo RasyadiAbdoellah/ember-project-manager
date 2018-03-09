@@ -1,5 +1,14 @@
 @import "ember-bootstrap/bootstrap";
 
+@function headings($from:1, $to:6) {
+  @if $from == $to {
+      @return 'h#{$from}';
+  } @else {
+      @return 'h#{$from},' + headings($from+1, $to);
+  }
+}
+
+
 .form-control, .bottom-margin {
   margin-bottom: 1.25rem;
 }
@@ -23,8 +32,22 @@ h1, h2 {
   }
 }
 
-.project-view-date-info {
-  padding: 5px 0;
-  font-weight: bold;
+.project-view-heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  h1 {
+    display: inline-block;
+    margin: 0;
+    padding-right: 10px
+  }
 }
+
+.project-view-date-info {
+  padding: 5px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
 

@@ -1,13 +1,4 @@
-{{#if model}}
-{{/if}}
-{{#link-to 'projects'}}back to projects {{/link-to}}
-<h1>{{model.name}}</h1>
-<h3 class="bg-danger project-view-date-info">Project due on: {{model.displayDueDate}}</h3>
-<h3 class="bg-warning project-view-date-info">Estimated project length: {{model.displayProjectLength}}</h3>
-<h3 class="bg-warning project-view-date-info">Time to due date: {{model.displayTimeTillDue}}</h3>
-<h3 class="bg-success project-view-date-info">Suggested start date: {{model.displayStartDate}}</h3>
-{{#if model.description}}
-<h4>Additional info</h4>
-<p>{{model.description}}</p>
-{{/if}}
+{{project/project-view project=model viewEdit=viewEdit toggleEdit='toggleEdit'}}
+{{#if viewEdit}}
 {{project/project-inputs project=model save='saveProject'}}
+{{/if}}

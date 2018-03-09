@@ -2,7 +2,9 @@ import Component from '@ember/component';
 import { computed } from '@ember/object';
 
 export default Component.extend({
-    dateValidator: computed('startDate', function() {
+  classNames:['col-xs-6'],
+
+  dateValidator: computed('startDate', function() {
     let theDate
     if(this.get('startDate')) {
       theDate = this.get('startDate')
@@ -14,6 +16,7 @@ export default Component.extend({
     const year = theDate.getUTCFullYear()
     return `${year}-${month}-${date}`
   }),
+  
   // startDateValidator: computed(function() {
   //   const theDate = new Date()
   //   const date = '0' + theDate.getDate() 

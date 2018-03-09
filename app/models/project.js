@@ -57,7 +57,7 @@ export default DS.Model.extend({
       } else {
         theDate = new Date()
       }
-      date = '0' + theDate.getUTCDate()
+      date = theDate.getUTCDate() < 10 ? '0' + theDate.getUTCDate() : theDate.getUTCDate()
       month = '0'+ (theDate.getUTCMonth() + 1)
       year = theDate.getUTCFullYear()
       console.log(`${year}-${month}-${date}`)
