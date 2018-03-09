@@ -1,6 +1,19 @@
 
 # MyProjectManager
-MyProjectManager is my attempt at translating how my wife plans out her projects into a web application. A user can create a project that can be shared or set to multiple owners. A project consists of a start and due date, a list of tasks to be completed, and has logic to send a reminder and summary of the project's status to the user. The tasks that make up a project also have individual start and due dates. A task's start date cannot be before its parent project's start date, and the due date cannot be after its parent project's due date.
+MyProjectManager is my attempt at translating how my wife plans out her projects into a web application. A user can create a project that consists of a start and due date, and in later iterations, a list of tasks to be completed. There is computed logic to show the suggested start date and the amount of days left till the project's due date to the user. 
+
+In future iterations, The tasks that make up a project will also have individual start and due dates. A task's start date cannot be before its parent project's start date, and the due date cannot be after its parent project's due date.
+
+This is the frontend for MyProjectManager.
+
+Deployed backend: https://agile-plains-89962.herokuapp.com/
+Deployed frontend: https://rasyadiabdoellah.github.io/ember-project-manager/
+Backend repo: https://github.com/RasyadiAbdoellah/project-manager-api
+
+## Tech Stack
+- HTML5, CSS3, JavaScript ES6
+- Ember frontend
+- Ruby on Rails backend
 
 ## User Stories
 ### V1
@@ -32,5 +45,15 @@ MyProjectManager is my attempt at translating how my wife plans out her projects
 
 
 ### ERD + Wireframes
-Links coming soon
+
+[Link to ERD](https://www.lucidchart.com/invitations/accept/a00cd495-fe73-4f47-86d6-7921a5ae1631)
+
+### Technical issues/improvements
+
+No technical issues found so far. A few improvement ideas:
+- Improve UX/UI
+- Add ability to specify/modify time
+- create tasks model, routing, and UX/UI
+- look into implementing moments.js/ember-moments
+
 
