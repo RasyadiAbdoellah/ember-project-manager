@@ -17,6 +17,16 @@ Backend repo: https://github.com/RasyadiAbdoellah/project-manager-backend
 - Ember frontend
 - Ruby on Rails backend
 
+## Action Plan
+
+- **Day 1:** Deploy boilerplate Backend & Frontend, build single resource API to V1, curl test CRUD functions, then deploy V1 API
+  
+- **Day 2:** Define front-end routing, build projects list view, single project functionality + view, new project functionality + view, and delete project function
+ 
+- **Day 3:** Work on date information display + manipulation, improve UX/UI flow, start styling
+  
+- **Day 4:** Bug fix, docs
+
 ## User Stories
 ### V1
 **- Epic: As a user, I want to save a project**
