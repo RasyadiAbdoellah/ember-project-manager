@@ -18,15 +18,25 @@ Backend repo: https://github.com/RasyadiAbdoellah/project-manager-backend
 - Ember frontend
 - Ruby on Rails backend
 
-## Action Plan
+## Dev Log
+
+Before starting I created a rough action plan to follow. Since this was my first time using Ember I knew the frontend would give me the most issues, so I decided to build as simple of a backend as possible so that I had more time to focus on areas I knew would give me trouble, particularly computing manipulating dates, and building a UX/UI flow that was simple and clean. The action plan is as follows:
 
 - **Day 1:** Deploy boilerplate Backend & Frontend, build single resource API to V1, curl test CRUD functions, then deploy V1 API
   
-- **Day 2:** Define front-end routing, build projects list view, single project functionality + view, new project functionality + view, and delete project function
+- **Day 2:** Define frontend routing, build projects list view, single project functionality + view, new project functionality + view, and delete project function
  
 - **Day 3:** Work on date information display + manipulation, improve UX/UI flow, start styling
   
 - **Day 4:** Bug fix, docs
+
+My predictions on what problems I would face were correct; dates are hard. However I wanted to better understand how they work, so I opted out of using something like Moment.js or Ember Moments to manage date manipulation. 
+
+I solved most of my date problems through experimentation and testing via curl scripts and the Node REPL. The evening of Day 2 was spent experimenting with Ruby's dateTime and JavaScript's/Embers Date data types. I found the rails backend can pretty much accept any string value that looks like a date format. I also learned that Ember stores dates retrieved from the backend as a standard JS date object.
+
+Knowing Ember stores dates as a Date object, I used the Node REPL to figure out the methods and calculations I needed to do to get the values I want displayed. Day 3 was spent translating what I learned in the REPL to the actual date values in Ember, which pretty much meant going through the Ember docs.
+
+The problems that I faced with Ember were more conceptual than technical; how data was passed down from route to template to component, how and where computed values and properties were stored, data binding from parent to child, etc. Solving these problems was easier in the sense that there was ample documentation, it was just figuring out which solution applied to my situation. The Ember docs were the most helpful in understanding how each part worked. Forum discussions and the GA issue queue were immensely helpful when I had a specific issue I was stuck with.
 
 ## User Stories
 ### V1
