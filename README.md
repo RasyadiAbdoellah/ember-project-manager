@@ -1,6 +1,7 @@
 
 # MyProjectManager
-MyProjectManager is my attempt at translating how my wife plans out her projects into a web application. A user can create a project that consists of a start and due date, and in later iterations, a list of tasks to be completed. There is computed logic to show the suggested start date and the amount of days left till the project's due date to the user. 
+![](https://i.imgur.com/7CDeJsb.png)
+MyProjectManager is my attempt at translating how my wife plans out her projects into a web application. A secondary purpose to this project was to gain a better understanding of Ember as a frontend framework, and gain more experience working with the base Javascript date object. A user can create a project that consists of a start and due date, and in later iterations, a list of tasks to be completed. There is computed logic to show the suggested start date and the amount of days left till the project's due date to the user. 
 
 In future iterations, The tasks that make up a project will also have individual start and due dates. A task's start date cannot be before its parent project's start date, and the due date cannot be after its parent project's due date.
 
