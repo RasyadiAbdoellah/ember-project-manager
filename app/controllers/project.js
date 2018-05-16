@@ -1,5 +1,9 @@
 import Controller from '@ember/controller';
 
+// Project needs a controller to handle the UI toggle. A route cannot have computed values, so the controller will handle toggle functionality for the route.
+
+// Components can have computed values that are locally scoped. So a component can identify its own view status, but once it is unloaded the values are reset as the instance is essentially destroyed. passing values up to the parent allows for permanence, as long as the parent is stays on the page. Note a refresh will also reset computed values.
+
 export default Controller.extend({
   viewEdit: false,
 

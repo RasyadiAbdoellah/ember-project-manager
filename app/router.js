@@ -6,6 +6,8 @@ const Router = EmberRouter.extend({
   rootURL: config.rootURL,
 });
 
+// router.js determines which view is loaded for each route. Note that these will routes will be rendered in the top-most {{outlet}} tag in the my-application.hbs
+
 Router.map(function () {
   this.route('sign-up');
   this.route('sign-in');

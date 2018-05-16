@@ -1,6 +1,8 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
+//Contents are taken from GA Ember template. The code below handles messages and warnings. Since this is a route, no properties are declared to handle the toggling. flashMessages and Auth are imported as services 
+
 export default Route.extend({
   auth: service(),
   flashMessages: service(),
